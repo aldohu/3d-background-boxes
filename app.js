@@ -1,5 +1,5 @@
 const grid = document.querySelector('.grid');
-
+const button = document.querySelector('.rotate');
 // Replace with the actual GIF URL
 const gifURL = '1tgr.gif'; /* Change to match GIF URL */
 
@@ -16,3 +16,7 @@ function createGrid() {
 }
 
 createGrid();
+
+button.addEventListener('click', () => {
+	grid.classList.toggle('splited');
+});

@@ -24,10 +24,12 @@ body {
 }
 .grid {
 	display: flex;
-	padding: 5px;
-	width: 420px;
-	height: 420px;
+
+	width: 440px;
+	height: 400px;
 	border: 2px solid red;
+	justify-content: center;
+	align-items: space-around;
 	flex-wrap: wrap;
 	transition: 0.4s ease;
 }
@@ -41,12 +43,12 @@ body {
 }
 .grid.splited .segment {
 	transform: rotateZ(360deg);
+	margin: 10px 10px;
 }
 .segment {
 	width: 100px; /* Set the correct width */
 	height: 100px; /* Set the correct height */
-	border: 1px solid green; /* Fix the typo 'soild' to 'solid' */
-	margin: 10px 10px;
+
 	background-repeat: no-repeat;
 	background-image: url('1tgr.gif');
 	background-size: 420px 420px;
@@ -54,7 +56,7 @@ body {
 	z-index: 10;
 }
 /* Styling for each segment using :nth-child() */
-.segment::after {
+.grid.splited .segment::after {
 	content: '';
 	background-color: #f9ca24;
 	position: absolute;
@@ -65,7 +67,7 @@ body {
 	z-index: 1;
 	transform: skewY(45deg);
 }
-.segment::before {
+.grid.splited .segment::before {
 	content: '';
 	background-color: #f9ca24;
 	position: absolute;
