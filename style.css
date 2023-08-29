@@ -1,0 +1,78 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	background-color: #fafafa;
+}
+.rotate {
+	position: absolute;
+	top: 10px;
+	background-color: #f9ca24;
+	border: 0;
+	border-radius: 3px;
+	padding: 12px 20px;
+	cursor: pointer;
+	box-shadow: #927611a8;
+}
+.grid {
+	display: flex;
+	padding: 5px;
+	width: 420px;
+	height: 420px;
+	border: 2px solid red;
+	flex-wrap: wrap;
+	transition: 0.4s ease;
+}
+.grid.splited {
+	width: 500px;
+	height: 500px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	position: relative;
+}
+.grid.splited .segment {
+	transform: rotateZ(360deg);
+}
+.segment {
+	width: 100px; /* Set the correct width */
+	height: 100px; /* Set the correct height */
+	border: 1px solid green; /* Fix the typo 'soild' to 'solid' */
+	margin: 10px 10px;
+	background-repeat: no-repeat;
+	background-image: url('1tgr.gif');
+	background-size: 420px 420px;
+	position: relative;
+	z-index: 10;
+}
+/* Styling for each segment using :nth-child() */
+.segment::after {
+	content: '';
+	background-color: #f9ca24;
+	position: absolute;
+	right: -15px;
+	top: 10px;
+	height: 100%;
+	width: 15px;
+	z-index: 1;
+	transform: skewY(45deg);
+}
+.segment::before {
+	content: '';
+	background-color: #f9ca24;
+	position: absolute;
+	right: -10px;
+	bottom: -15px;
+	height: 15px;
+	width: 100%;
+	z-index: 1;
+	transform: skewX(45deg);
+}
